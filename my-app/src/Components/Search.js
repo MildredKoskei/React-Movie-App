@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 function Search({searchMovie}) {
     const[search, setSearch] = useState();
     
+    
   return (
     <div>
         <nav>

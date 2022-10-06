@@ -1,11 +1,16 @@
 import React from 'react'
 import Main from './Components/Main'
-import "./Components/style.css"
+
 
 function App() {
+  const myStyle = {
+    color: "white",
+    font: "italic",
+    align: "centre"
+  };
   return (
     <>
-    <h1 style = {{color: "white"}}>Discover AND WATCH YOUR AMAZING MOVIES!</h1>
+    <h1 style = {myStyle}>DISCOVER AND WATCH ENDLESS AMAZING MOVIES!!</h1>
     <Main />
     </>
   )
