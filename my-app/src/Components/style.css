@@ -22,6 +22,7 @@ body {
 nav ul {
   display: flex;
 }
+
 nav ul li {
   list-style: none;
   margin-right: 1rem;
@@ -60,7 +61,6 @@ nav ul li a:focus::before {
 }
 .search-button {
   display: flex;
-  
 }
 .inputText {
   outline: none;
@@ -91,9 +91,8 @@ nav ul li a:focus::before {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  
 }
- .movie{
+.movie {
   box-shadow: 0 5px 10px rgb(0, 0, 0, 0.5);
   width: 250px;
   background-color: var(--secondary-color);
@@ -103,12 +102,11 @@ nav ul li a:focus::before {
   overflow: hidden;
   position: relative;
 }
- .poster{
+.poster {
   width: 100%;
   height: 250px;
-  border-radius: 10px 10px 10px 10px;
-} 
-.movie-details{
+}
+.movie-details {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -120,23 +118,28 @@ nav ul li a:focus::before {
   display: flex;
   align-items: center;
   justify-content: space-around;
-} 
+}
 .movie-details .title {
   width: 160px;
   text-align: center;
-  color: white;
 }
- .rating {
-  background-color: white;
-  width:45px;
+.rating {
+  background-color: wheat;
+  width: 45px;
   height: 45px;
   border-radius: 50%;
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
+  font-weight: bold;
+  border: 1px solid var(--primary-color);
+  box-shadow: inset 0 5px 5px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
 }
- .movie-details .overview{
-  position:absolute;
+.movie-details .overview {
+  position: absolute;
   max-height: 100%;
   background-color: var(--secondary-color);
   opacity: 0.9;
@@ -149,4 +152,21 @@ nav ul li a:focus::before {
 }
 .movie-details:hover .overview {
   transform: translateY(0%);
-} 
+}
+@media (max-width: 900px) {
+  .header {
+    background-color: var(--secondary-color);
+    height: 180px;
+  }
+  nav ul {
+    display: flex;
+    flex-direction: column;
+  }
+  nav ul li {
+    padding-top: 10px;
+  }
+  .search-button {
+    width: 200px;
+   margin-right: 100px;
+  }
+}
