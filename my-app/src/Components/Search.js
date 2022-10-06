@@ -1,7 +1,12 @@
 import React, { useState } from 'react'
 
 function Search({searchMovie}) {
-    const[search, setSearch] = useState();
+const[search, setSearch] = useState("")
+
+function handleChange(e){
+    setSearch(e.target.value);
+onSearching(search);
+}
    
     
   return (
@@ -9,10 +14,10 @@ function Search({searchMovie}) {
         <nav>
         <form>
             <div className="search-button">
-                <input type = "text" placeholder="Enter Movie Name" className="inputText" onChange ={(e) => {setSearch(e.target.value)}} 
+                <input type = "text" placeholder="Enter Movie Name" className="inputText" onChange ={handleChange} 
                 value = {search} onKeyPress = {searchMovie}>
                     </input>
-                    <button onClick={()=> (searchMovie)}>Search</button>
+                    <button>Search</button>
 
             </div>
         </form> 
