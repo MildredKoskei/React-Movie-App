@@ -17,6 +17,7 @@ const Main = () => {
       .then((data) => {
         setMovieData(data.results);
       });
+      
   }, [movieUrl]);
   function getData(movieType) {
     if (movieType === "Popular") {
@@ -48,17 +49,9 @@ const Main = () => {
     }
     setMovieUrl(url);
   }
-  function searchMovie(evt) {
-    if (evt.key === "Enter") {
-      console.log(evt);
-      url =
-        base_url +
-        "/search/movie?api_key=f4ccf89c2ee6e3bece6132fb34133822&query=" +
-        search;
-      setMovieData(url);
-      setSearch(" ");
-    }
-  }
+function searchMovies(){
+  
+}
 
   return (
     <>
@@ -81,7 +74,7 @@ const Main = () => {
             })}
           </ul>
         </nav>
-        <Search searchMovie={searchMovie} />
+        <Search  searchMovies = {searchMovies}/>
       </div>
 
       <div className="container">
