@@ -1,29 +1,30 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
-function Search({searchMovie}) {
-const[search, setSearch] = useState("")
+function Search({ searchMovies }) {
+  const [search, setSearch] = useState("");
 
-function handleChange(e){
+  function handleChange(e) {
     setSearch(e.target.value);
-onSearching(search);
-}
-   
-    
+  }
+
   return (
     <div>
-        <nav>
+      <nav>
         <form>
-            <div className="search-button">
-                <input type = "text" placeholder="Enter Movie Name" className="inputText" onChange ={handleChange} 
-                value = {search} onKeyPress = {searchMovie}>
-                    </input>
-                    <button>Search</button>
-
-            </div>
-        </form> 
-        </nav>
-    </div> 
-  )
+          <div className="search-button">
+            <input
+              type="text"
+              placeholder="Enter Movie Name"
+              className="inputText"
+              onChange={handleChange}
+              value={search}
+              onKeyPress={searchMovies}></input>
+            <button>Search</button>
+          </div>
+        </form>
+      </nav>
+    </div>
+  );
 }
 
-export default Search
+export default Search;

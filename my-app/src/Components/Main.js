@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 import "./style.css";
 import Search from "./Search";
 import Card from "./Card";
@@ -10,14 +9,13 @@ let array = ["Popular", "Theatre", "Kids", "Drama", "Comedy"];
 const Main = () => {
   const [movieData, setMovieData] = useState([]);
   const [movieUrl, setMovieUrl] = useState(url);
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState();
   useEffect(() => {
     fetch(movieUrl)
       .then((resp) => resp.json())
       .then((data) => {
         setMovieData(data.results);
       });
-      
   }, [movieUrl]);
   function getData(movieType) {
     if (movieType === "Popular") {
@@ -49,9 +47,16 @@ const Main = () => {
     }
     setMovieUrl(url);
   }
-function searchMovies(){
-  
-}
+  function searchMovies(event) {
+    if (event.key === "Enter") {
+      url =
+        base_url +
+        "/search/movie?api_key=f4ccf89c2ee6e3bece6132fb34133822&query=" +
+        search;
+      setMovieUrl(url);
+      setSearch(" ");
+    }
+  }
 
   return (
     <>
@@ -74,16 +79,16 @@ function searchMovies(){
             })}
           </ul>
         </nav>
-        <Search  searchMovies = {searchMovies}/>
+        <Search searchMovies={searchMovies} />
       </div>
 
       <div className="container">
-        {movieData.length === 0 ? (
-          <p className="not found">Not Found</p>
-        ) : (
+        {movieData.length !== 0 ? (
           movieData.map((res, pos) => {
             return <Card info={res} key={pos} />;
           })
+        ) : (
+          <p className="not found">Not Found</p>
         )}
       </div>
     </>
