@@ -1,4 +1,5 @@
 # React-Movie-App
+- live site link `http://movie-app-ten-liart.vercel.app/`
 - This is a movie app which uses react to render it's details and other functionalities eg. searching for
 a movie
 
